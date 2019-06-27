@@ -145,10 +145,10 @@ data_human={'/Targets_balanced/bb_3class_winlen_256_winindex_all/bb_3class_winle
     '/Targets_balanced/bb_3class_winlen_640_winindex_all/bb_3class_winlen_640_winindex_all_train/Human', '/Targets_balanced/bb_3class_winlen_640_winindex_all/bb_3class_winlen_640_winindex_all_val/Human', '/Targets_balanced/bb_3class_winlen_640_winindex_all/bb_3class_winlen_640_winindex_all_test/Human',...
     '/Targets_balanced/bb_3class_winlen_768_winindex_all/bb_3class_winlen_768_winindex_all_train/Human', '/Targets_balanced/bb_3class_winlen_768_winindex_all/bb_3class_winlen_768_winindex_all_val/Human', '/Targets_balanced/bb_3class_winlen_768_winindex_all/bb_3class_winlen_768_winindex_all_test/Human'};
 
-%% MSRI: Train(1)-Val(2)-Test(3): Bumblebee data full cuts    [BALANCED]
-%Index=[9991, 9992, 9993];
-%data_dog={'/Targets_balanced/bb_3class_Full_Cuts/bb_3class_Full_Cuts_train/Nonhuman', '/Targets_balanced/bb_3class_Full_Cuts/bb_3class_Full_Cuts_val/Nonhuman', '/Targets_balanced/bb_3class_Full_Cuts/bb_3class_Full_Cuts_test/Nonhuman'};
-%data_human={'/Targets_balanced/bb_3class_Full_Cuts/bb_3class_Full_Cuts_train/Human', '/Targets_balanced/bb_3class_Full_Cuts/bb_3class_Full_Cuts_val/Human', '/Targets_balanced/bb_3class_Full_Cuts/bb_3class_Full_Cuts_test/Human'};
+%% MSRI: Bumblebee regression data labels    [BALANCED]
+Index=[27681, 27682, 27683];
+data_dog={'/Targets_balanced/bb_3class_winlen_768_winindex_all/bb_3class_winlen_768_winindex_all_train/Nonhuman', '/Targets_balanced/bb_3class_winlen_768_winindex_all/bb_3class_winlen_768_winindex_all_val/Nonhuman', '/Targets_balanced/bb_3class_winlen_768_winindex_all/bb_3class_winlen_768_winindex_all_test/Nonhuman'};
+data_human={'/Targets_balanced/bb_3class_winlen_768_winindex_all/bb_3class_winlen_768_winindex_all_train/Human', '/Targets_balanced/bb_3class_winlen_768_winindex_all/bb_3class_winlen_768_winindex_all_val/Human', '/Targets_balanced/bb_3class_winlen_768_winindex_all/bb_3class_winlen_768_winindex_all_test/Human'};
 
 %% Execute.m
 featureClass = 0;
