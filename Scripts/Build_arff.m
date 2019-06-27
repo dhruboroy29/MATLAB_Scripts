@@ -38,8 +38,7 @@ f_set=[]; % f_set will eventually contain the complete list of feature vectors f
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% human
 cd(path_data_human);
 fileFullNames=dir;
-
-
+file_order = {};
 Files={};  % first 2 file is '.' and '..'
 i=1;
 for j=1:length(fileFullNames)
@@ -50,12 +49,14 @@ for j=1:length(fileFullNames)
         i=i+1;
     end
 end
+num_of_humans = num2str(length(Files));
 for i=1:length(Files) % take every file from the set 'Files'
     if mod(i,10)==0
         sprintf('Human - %dth file is processing\n',i) % Report every 10 files-the i-th file is processing
     end
     %sprintf('Human - %dth file is processing\n',i)
     fileName=Files{i};
+    file_order = [file_order string(fileName)];
     [~, f_file] = File2Feature(fileName, 'Human', ifScaled, featureClass, feature_min, scalingFactors,[]);
     %     if ifScaled==0
     %         [imghuman, f_file] = File2Feature(fileName, 'Human', ifScaled, featureClass, feature_min, scalingFactors,[]);
@@ -85,12 +86,14 @@ for j=1:length(fileFullNames)
         i=i+1;
     end
 end
+num_of_dogs = num2str(length(Files));
 for i=1:length(Files) % take every file from the set 'Files'
     if mod(i,10)==0
         sprintf('Dog - %dth file is processing\n',i) % Report every 10 files-the i-th file is processing
     end
     %sprintf('Dog - %dth file is processing\n',i)
     fileName=Files{i};
+    file_order = [file_order string(fileName)];
     [~, f_file] = File2Feature(fileName, 'Dog', ifScaled, featureClass, feature_min, scalingFactors,[]);
     %     if ifScaled==0
     %         [imgdog, f_file] = File2Feature(fileName, 'Dog', ifScaled, featureClass, feature_min, scalingFactors,[]);
@@ -178,6 +181,14 @@ instances=matlab2weka(sprintf('radar%d',OutIndex),featureNames,f_set,nColumn,ifR
 
 %% save the wekaOBJ to arff file
 cd(path_arff);
+file_order_file = sprintf('file_order_radar%d.txt',OutIndex)
+fd = fopen(file_order_file,'w');
+for i=1:length(file_order)
+    fileName = file_order{i};
+    fprintf(fd,'%s\n',fileName);
+end
+fclose(fd);
+
 if ifScaled == 0
     saveARFF(sprintf('radar%d.arff',OutIndex),instances);
 %    saveARFF(sprintf('radar%d_nr.arff',OutIndex),instances_nr);
