@@ -1,4 +1,4 @@
-function handle=WalkCdfs_Individual_MASS(inDirs,outPath,outName,SampRate,IQRejectionParam,N)
+function handle=WalkCdfs_Individual_MASS(inDirs,outPath,outName,SampRate,IQRejectionParam,L)
 UnRots=[];
 for inDir=inDirs
     cd(char(inDir));
@@ -18,11 +18,11 @@ for inDir=inDirs
             CompReSamp = CompTrim;
         end
 
-        UnRots = [UnRots, (UnWrap(angle(CompReSamp)/2/pi, -0.5, 0.5))'];
+        UnRots = [UnRots; (UnWrap(angle(CompReSamp)/2/pi, -0.5, 0.5))'];
     end
 end
 
-[cumData,~]=NoiseCdf_MASS(UnRots,outPath,outName,250,0.5,IQRejectionParam,N);
+[cumData,~]=NoiseCdf_MASS(UnRots,outPath,outName,SampRate,0.5,IQRejectionParam,L);
 
 Data=cumData;
 BumbleBee;

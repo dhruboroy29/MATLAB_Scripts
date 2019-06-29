@@ -15,8 +15,8 @@ out_bushes = ComputeNoiseCDFs_MASS('/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Re
     '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'Coffman-tree-2m', 256, 0.5, IQRejectionParam,N);
 out_grass = ComputeNoiseCDFs_MASS('/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Data_Repository/Nathan_grass_outside_Samraksh/wednesday_noise.bbs', ...
     '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'Chris-indoors-WLN', 256, 0.5, IQRejectionParam,N);
-out_indoors = ComputeNoiseCDFs_MASS('/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Data_Repository/wln data/30670 indoor 2.bbs', ...
-    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'Chris-indoors-WLN', 256, 0.5, IQRejectionParam,N);
+%out_indoors = ComputeNoiseCDFs_MASS('/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Data_Repository/wln data/30670 indoor 2.bbs', ...
+%    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'Chris-indoors-WLN', 256, 0.5, IQRejectionParam,N);
 
 h1=PlotCdfs_MASS(out_cornfield,'-');
 h2=PlotCdfs_MASS(out_garage,'-');
