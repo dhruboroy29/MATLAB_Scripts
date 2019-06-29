@@ -1,20 +1,22 @@
 close all
+% Set default font size
+set(0,'defaultAxesFontSize',20);
 
 IQRejectionParam = 0.9;
 N = 1;
 
 out_cornfield = ComputeNoiseCDFs_MASS('/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Data_Repository/Parking garage radial ortho (Sandeep)/SenSys10_data_scripts/data/1-CornField-Snow/snow-no-targets.data', ...
-    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/','snow-no-targets', 250, 0.5, IQRejectionParam,N);
+    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/','snow-no-targets', 256, 0.5, IQRejectionParam,N);
 out_garage = ComputeNoiseCDFs_MASS('/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Data_Repository/Parking garage radial ortho (Sandeep)/SenSys10_data_scripts/data/4-OSU-Garage/r46-garage.data', ...
-    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'r46-garage', 250, 0.5, IQRejectionParam,N);
+    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'r46-garage', 256, 0.5, IQRejectionParam,N);
 out_trees = ComputeNoiseCDFs_MASS('/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Data_Repository/Parking garage radial ortho (Sandeep)/SenSys10_data_scripts/data/3-AveryPark-2trees/r46-2trees-3m.data', ...
-    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'r46-2trees-3m', 250, 0.5, IQRejectionParam,N);
+    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'r46-2trees-3m', 256, 0.5, IQRejectionParam,N);
 out_bushes = ComputeNoiseCDFs_MASS('/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Data_Repository/Parking garage radial ortho (Sandeep)/SenSys10_data_scripts/data/2-CoffmanPark-Tree/Coffman-tree-2m.data', ...
-    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'Coffman-tree-2m', 250, 0.5, IQRejectionParam,N);
+    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'Coffman-tree-2m', 256, 0.5, IQRejectionParam,N);
 out_grass = ComputeNoiseCDFs_MASS('/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Data_Repository/Nathan_grass_outside_Samraksh/wednesday_noise.bbs', ...
-    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'Chris-indoors-WLN', 250, 0.5, IQRejectionParam,N);
+    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'Chris-indoors-WLN', 256, 0.5, IQRejectionParam,N);
 out_indoors = ComputeNoiseCDFs_MASS('/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Data_Repository/wln data/30670 indoor 2.bbs', ...
-    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'Chris-indoors-WLN', 250, 0.5, IQRejectionParam,N);
+    '/mnt/6b93b438-a3d4-40d2-9f3d-d8cdbb850183/Research/Robust_Learning/Results/Displacement_Graphs/Noise_CDFs/', 'Chris-indoors-WLN', 256, 0.5, IQRejectionParam,N);
 
 h1=PlotCdfs_MASS(out_cornfield,'-');
 h2=PlotCdfs_MASS(out_garage,'-');

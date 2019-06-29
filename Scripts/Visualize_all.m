@@ -28,7 +28,6 @@ end
 for i=1:length(Files) % take every file from the set 'Files'
     sprintf('%dth file is processing: %s\n',i,char(Files{i})) % the i-th file is processing
     fileName=Files{i};
-    
     Visualize(fileName,sampRate,FftWindow);
 %     pause;
 end

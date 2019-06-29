@@ -118,5 +118,13 @@ else % PLOTFRAMES=1
     end
 end
 print('-dbitmap', [path_spec,fileName,'.spect.emf']);
+set(gca,'FontSize',20)
+xlabel('Time (s)', 'FontSize', 30);
+ylabel('Frequency (Hz)', 'FontSize', 30);
+fig = gcf;
+fig.PaperPositionMode = 'auto';
+fig_pos = fig.PaperPosition;
+fig.PaperSize = [fig_pos(3) fig_pos(4)];
+print(fig,[path_spec,fileName,'_spect.pdf'],'-dpdf');
 
 
